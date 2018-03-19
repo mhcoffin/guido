@@ -38,6 +38,10 @@ SectionMetadataBuilder SectionMetadata::builder() {
     return SectionMetadataBuilder();
 }
 
+SectionMetadataBuilder SectionMetadata::builder(SectionMetadata & section_metadata) {
+    return SectionMetadataBuilder(section_metadata);
+}
+
 
 SectionMetadataBuilder::SectionMetadataBuilder(SectionMetadata &section_metadata)
 : section_metadata_(section_metadata) {

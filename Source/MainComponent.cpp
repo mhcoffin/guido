@@ -28,6 +28,15 @@ void MainComponent::paint (Graphics& g)
         .composer("mhc")
         .build();
     assert(sm.title() == "Foobar");
+    assert(sm.composer() == "mhc");
+    assert(sm.subtitle() == "");
+    
+    auto sm2 = SectionMetadata::builder(sm).version("1.0").build();
+    assert(sm.title() == sm2.title());
+    assert(sm.composer() == sm2.composer());
+    assert(sm.version() == "");
+    assert(sm2.version() == "1.0");
+    
     
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));

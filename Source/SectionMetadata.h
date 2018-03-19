@@ -23,6 +23,7 @@ public:
     String version() const { return version_; }
     
     static SectionMetadataBuilder builder();
+    static SectionMetadataBuilder builder(SectionMetadata&);
     
     friend class SectionMetadataBuilder;
 private:
