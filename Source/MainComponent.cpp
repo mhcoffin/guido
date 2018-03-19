@@ -7,6 +7,7 @@
 */
 
 #include "MainComponent.h"
+#include "SectionMetadata.h"
 
 //==============================================================================
 MainComponent::MainComponent()
@@ -21,6 +22,13 @@ MainComponent::~MainComponent()
 //==============================================================================
 void MainComponent::paint (Graphics& g)
 {
+    // Test the Section Metadata
+    auto sm = SectionMetadata::builder()
+        .title("Foobar")
+        .composer("mhc")
+        .build();
+    assert(sm.title() == "Foobar");
+    
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
 
